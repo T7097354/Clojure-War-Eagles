@@ -16,8 +16,7 @@
   (with-open [rdr (reader "Input.txt")]
     (def amount (readFirstLine rdr))
     (println (str amount "\n---"))
-    (line-seq rdr)
-      (doseq [line (line-seq rdr)]
+      (doseq [line (next(line-seq rdr))]
         (def charString(clojure.string/split line #""))
         (def charLineVector(map-indexed vector charString))
         ;(println charStringVector)
